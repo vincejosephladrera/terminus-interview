@@ -1,0 +1,10 @@
+=link_to "Back", admin_path, class: "mb-4"
+
+-if @property.presence
+  h1.mb-4.text-success Property Show Page
+  h2 Name: #{handle_nil(@property.name)}
+  h3 Display Name: #{handle_nil(@property.display_name)}
+  h4 Address: #{handle_nil(@property.address)}
+  h5 Market Value: #{display_market_value(@property.market_value)}
+  h5 Owner Address: #{handle_nil(@property.owner_address)}
+  h5 City: #{handle_nil(@property.city)}

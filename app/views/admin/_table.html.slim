@@ -1,0 +1,27 @@
+-if records.present?
+  table.table.table-striped.table-bordered
+    thead.thead-light
+      th =sort_button(1, "Name")
+      th =sort_button(2, "Display Name")
+      th =sort_button(3, "Address")
+      th =sort_button(4, "Market Value")
+      th =sort_button(5, "Owner Address")
+      th =sort_button(6, "City")
+      th Actions
+    tbody 
+      -@properties.each do |property|
+        tr
+          td #{handle_nil(property.name)}
+          td #{handle_nil(property.display_name)}
+          td #{handle_nil(property.address)}
+          td #{display_market_value(property.market_value)}
+          td #{handle_nil(property.owner_address)}
+          td #{handle_nil((property.city))}
+          td 
+            a data-turbo="false" href="#{property_show_path(property.id)}"
+              = icon('eye', 'text-success eye-icon')
+-else
+  .empty-state
+    h2 No properties found
+    p We couldn't find any properties matching your search criteria.
+=render "partials/pagination", records: records

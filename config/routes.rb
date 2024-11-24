@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "admin#view"
 
   get "/admin", to: "admin#view"
-  get "/admin/:id", to: "admin#show"
+  get "/admin/:id", to: "admin#show", as: "property_show"
 
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

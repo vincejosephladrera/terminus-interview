@@ -1,0 +1,6 @@
+-if records.present?
+  .row.justify-content-center.align-items-center.justify-content-sm-between.pt-4.g-3
+    .col-auto.overline
+      = page_entries(records, @pagy, entry_name: (defined?(entry_name) ? entry_name : 'record'))
+    .col-auto
+      = pagy_nav(@pagy, link_extra: 'data-turbo-action="advance"').html_safe

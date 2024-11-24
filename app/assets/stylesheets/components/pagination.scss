@@ -1,0 +1,59 @@
+@import '../bootstrap/variables';
+@import '../bootstrap/mixins';
+
+.pagination {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
+
+	.page {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 28px;
+		width: 28px;
+		border-radius: 4px;
+		font-size: 12px;
+		transition: $transition-base;
+		font-weight: $font-weight-medium;
+		// border: 1px solid transparent;
+
+		a {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100%;
+			width: 100%;
+			color: $body-color;
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: none;
+				color: $primary;
+			}
+		}
+
+		&:hover {
+			color: $primary;
+			background-color: $gray-200;
+			border-color: $gray-300;
+		}
+
+		&.active {
+			background-color: $primary;
+			color: $white;
+		}
+
+		&.prev,
+		&.next {
+			a {
+				color: $primary;
+			}
+		}
+
+		&.disabled {
+			background-color: $gray-100;
+			pointer-events: none;
+		}
+	}
+}

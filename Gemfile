@@ -33,6 +33,16 @@ gem "bootsnap", require: false
 
 gem 'sidekiq'
 
+# Use pagy for pagination.
+gem 'pagy', '9.1.1'
+
+#html templating
+gem "slim-rails", ">= 3.3"
+
+gem 'sass-rails'
+
+gem 'bootstrap', '~> 5.3.3'
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 

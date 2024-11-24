@@ -1,0 +1,10 @@
+=form_with(url: admin_path, method: "GET",
+data: { turbo_frame: "data-table", controller: "table", action: "input->table#submitFilter" }) do |f|
+  =f.hidden_field :order_by, data: { "order-by": "order-by" }
+  .row.mb-4
+    .col-lg-4
+      .field-group.mb-0
+        .field-container
+          =f.text_field :address, class: "form-control", autocomplete: "off", placeholder: 'Search by address', value: params[:address]
+  =turbo_frame_tag "data-table" do
+    =render partial: "table", locals: { records: @properties }
